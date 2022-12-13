@@ -1,0 +1,15 @@
+.internal{
+    margin-top:30px;
+    width: 600px;
+    height: 400px;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: blueviolet;
+}
+.external{
+    text-align: center;
+}
+.title
+{
+    font-family: 'Courier New', Courier, monospace;
+}
