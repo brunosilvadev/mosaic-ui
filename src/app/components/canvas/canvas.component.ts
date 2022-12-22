@@ -17,4 +17,14 @@ export class CanvasComponent implements OnInit {
       this.pixels = px;
     });
   }
+  
+  async paint()
+  {
+    const p :Pixel = {
+      x:1,
+      y:3,
+      hexColor:'FFFF00'
+    }
+    await this.service.PaintPixel(p);
+  }
 }

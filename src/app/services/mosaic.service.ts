@@ -8,10 +8,16 @@ import { lastValueFrom } from 'rxjs';
 })
 export class MosaicService {
 
+  baseUri:string = "https://collabcanvas-api.azurewebsites.net/";
+
   constructor(private client:HttpClient) { }
   async getAllPixels()
   {
-    return await lastValueFrom(this.client.get<Pixel[]>("https://collabcanvas-api.azurewebsites.net/getAll"));
+    return await lastValueFrom(this.client.get<Pixel[]>(this.baseUri + "see"));
+  }
+  async PaintPixel(pixel:Pixel)
+  {
+    return await lastValueFrom(this.client.post(this.baseUri + "paint-canvas",pixel));
   }
 
 }
