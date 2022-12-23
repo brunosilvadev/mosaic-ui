@@ -12,19 +12,28 @@ export class CanvasComponent implements OnInit {
   constructor(private service: MosaicService) { }
 
   pixels:Pixel[] = [];
+  loaded:boolean = false;
+
   ngOnInit(): void {
-    this.service.getAllPixels().then(px => {
-      this.pixels = px;
-    });
+    this.refresh();
   }
   
+  newPixel:Pixel = {x:0,y:0,hexColor:""};
+
+  newPixelX:number = 0;
   async paint()
   {
-    const p :Pixel = {
-      x:1,
-      y:3,
-      hexColor:'FFFF00'
-    }
-    await this.service.PaintPixel(p);
+    await this.service.PaintPixel(this.newPixel);
+    await this.refresh();
+  }
+  async refresh()
+  {
+    this.service.getAllPixels().then(px => {
+      if(px != null)
+      {
+        this.pixels = px.pixels;
+        this.loaded = true;
+      }
+    });    
   }
 }

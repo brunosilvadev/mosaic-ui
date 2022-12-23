@@ -1,6 +1,14 @@
 <div class="external">
     <h2 class="title">CollabCanvassss</h2>
-    <div class="internal">
+    <div class="internal" *ngIf="loaded">
+        <div  *ngFor="let p of pixels">
+            <div [ngStyle]="{'background-color': '#' +p.hexColor}" > 
+            {{p.x}} - {{p.y}}, {{p.hexColor}}</div>
+         </div>
     </div>
+    <div *ngIf="!loaded">Loading content...</div>
+    <input type="text" [(ngModel)]="newPixel.x">
+    <input type="text" [(ngModel)]="newPixel.y">
+    <input type="text" [(ngModel)]="newPixel.hexColor">
     <input type="button" value="pintar" (click)="paint()">
 </div>
