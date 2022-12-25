@@ -12,7 +12,6 @@ export class CanvasComponent implements OnInit {
 
   constructor(private service: MosaicService) { }
 
-  pixels:Pixel[] = [];
   loaded:boolean = false;
 
   ngOnInit(): void {
@@ -26,27 +25,28 @@ export class CanvasComponent implements OnInit {
   {
     await this.service.PaintPixel(this.newPixel);
     await this.refresh();
-    this.buildPerspective();
-    console.log(this.p);
   }
   async refresh()
   {
     this.service.getAllPixels().then(px => {
       if(px != null)
       {
-        this.pixels = px.pixels;
+        this.buildPerspective(px.pixels);
         this.loaded = true;
       }
     });    
   }
-  p:Perspective = {rows:[]} as Perspective;
-  buildPerspective()
-  {
-    this.pixels.forEach(px => {
-      let x = px.x - 1;
-      if(!this.p.rows[x])
-        this.p.rows.push([]);
-      this.p.rows[x].push(px);
+
+  perspective:Perspective = {rows:[]};
+
+  buildPerspective(pixels: Pixel[]) {
+    this.perspective = {rows:[]};
+    pixels.forEach(pixel => {
+      let rowIndex = pixel.x - 1;
+      if(!this.perspective.rows[rowIndex])
+        this.perspective.rows.push([]);
+      this.perspective.rows[rowIndex].push(pixel);
     });
   }
+  
 }
