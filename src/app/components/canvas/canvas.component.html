@@ -4,7 +4,7 @@
         <div class="perspective" *ngIf="perspective.rows.length>0">
             <div *ngFor="let r of perspective.rows">
                 <div class="pixel" *ngFor="let p of r">
-                    <div [ngStyle]="{'background-color': '#' + p.hexColor}">&nbsp;</div>
+                    <div class="element" [ngStyle]="{'background-color': '#' + p.hexColor}">&nbsp;</div>
                 </div>
                 <br />
             </div>
