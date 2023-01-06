@@ -1,0 +1,25 @@
+.screen {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+  }
+  
+.intro {
+    width: 18%;
+    float: right;
+    right: 5%;
+    position: absolute;
+    top: 10%;
+}
+.footer{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 7px;    
+}

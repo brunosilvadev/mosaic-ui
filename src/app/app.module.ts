@@ -6,11 +6,15 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CanvasComponent } from './components/canvas/canvas.component';
+import { IntroComponent } from './components/intro/intro.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CanvasComponent
+    CanvasComponent,
+    IntroComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
