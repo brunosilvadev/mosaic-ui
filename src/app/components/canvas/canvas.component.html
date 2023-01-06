@@ -1,18 +1,20 @@
 <div class="external">
-    <h2 class="title">CollabCanvassss</h2>
+    <h2 class="title">CollabCanvas</h2>
     <div class="internal" *ngIf="loaded">
         <div class="perspective" *ngIf="perspective.rows.length>0">
             <div *ngFor="let r of perspective.rows">
                 <div class="pixel" *ngFor="let p of r">
-                    <div class="element" [ngStyle]="{'background-color': '#' + p.hexColor}">&nbsp;</div>
-                </div>
+                    <div class="element"
+                        [ngStyle]="{'background-color': '#' + p.hexColor}"
+                        (click)="selectPixel(p)">&nbsp;</div>
+                </div>  
                 <br />
             </div>
         </div>
     </div>
     <div *ngIf="!loaded">Loading content...</div>
-    <input type="text" [(ngModel)]="newPixel.x">
-    <input type="text" [(ngModel)]="newPixel.y">
-    <input type="text" [(ngModel)]="newPixel.hexColor">
-    <input type="button" value="pintar" (click)="paint()">
+    <div *ngIf="pixelHasBeenSelected">    
+        <input type="text" [(ngModel)]="newPixel.hexColor">
+        <input type="button" value="pintar" (click)="paint()">
+    </div>
 </div>

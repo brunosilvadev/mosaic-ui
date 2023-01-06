@@ -13,6 +13,7 @@ export class CanvasComponent implements OnInit {
   constructor(private service: MosaicService) { }
 
   loaded:boolean = false;
+  pixelHasBeenSelected:boolean = false;
 
   ngOnInit(): void {
     this.refresh();
@@ -23,6 +24,7 @@ export class CanvasComponent implements OnInit {
   newPixelX:number = 0;
   async paint()
   {
+    this.pixelHasBeenSelected = false;
     await this.service.PaintPixel(this.newPixel);
     await this.refresh();
   }
@@ -47,6 +49,11 @@ export class CanvasComponent implements OnInit {
         this.perspective.rows.push([]);
       this.perspective.rows[rowIndex].push(pixel);
     });
+  }
+
+  selectPixel(selectedPixel:Pixel){
+    this.pixelHasBeenSelected =  true;
+    this.newPixel = selectedPixel;    
   }
   
 }
