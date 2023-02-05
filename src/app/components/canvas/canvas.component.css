@@ -33,3 +33,10 @@
 {
     height: 100%;
 }
+.button-paint{
+    padding:  5px;
+    width: 60px;
+}
+.input-paint {
+    padding:  5px;
+}

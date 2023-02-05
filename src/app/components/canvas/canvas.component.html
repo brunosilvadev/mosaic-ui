@@ -14,7 +14,11 @@
     </div>
     <div *ngIf="!loaded">Loading content...</div>
     <div *ngIf="pixelHasBeenSelected">    
-        <input type="text" [(ngModel)]="newPixel.hexColor">
-        <input type="button" value="pintar" (click)="paint()">
+        <div class="paint">
+            <p> 
+                &#35; <input class="input-paint" type="" [(ngModel)]="newPixel.hexColor" clear-icon> 
+                <button class="button-paint" type appEmoji="button" value="paint" (click)="paint()"> </button>
+            </p>
+        </div>
     </div>
 </div>

@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { CanvasComponent } from './components/canvas/canvas.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { EmojiDirective } from './directives/emoji.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CanvasComponent,
     IntroComponent,
-    FooterComponent
+    FooterComponent,
+    EmojiDirective
   ],
   imports: [
     BrowserModule,
