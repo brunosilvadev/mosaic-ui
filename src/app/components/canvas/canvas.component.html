@@ -1,5 +1,5 @@
 <div class="external">
-    <h2 class="title">CollabCanvas</h2>
+    <h2 class="title"*ngIf="loaded">CollabCanvas</h2>
     <div class="internal" *ngIf="loaded">
         <div class="perspective" *ngIf="perspective.rows.length>0">
             <div *ngFor="let r of perspective.rows">
@@ -7,16 +7,16 @@
                     <div class="element"
                         [ngStyle]="{'background-color': '#' + p.hexColor}"
                         (click)="selectPixel(p)">&nbsp;</div>
-                </div>  
+                </div>
                 <br />
             </div>
         </div>
     </div>
     <div *ngIf="!loaded">Loading content...</div>
-    <div *ngIf="pixelHasBeenSelected">    
+    <div *ngIf="pixelHasBeenSelected">
         <div class="paint">
-            <p> 
-                &#35; <input class="input-paint" type="" [(ngModel)]="newPixel.hexColor" clear-icon> 
+            <p>
+                &#35; <input class="input-paint" type="" [(ngModel)]="newPixel.hexColor" clear-icon>
                 <button class="button-paint" type appEmoji="button" value="paint" (click)="paint()"> </button>
             </p>
         </div>
