@@ -13,12 +13,13 @@
         </div>
     </div>
     <div *ngIf="!loaded">Loading content... </div>
-    <div *ngIf="pixelHasBeenSelected">
-        <div class="paint">
-            <p>
+    <div *ngIf="pixelHasBeenSelected && userCanEdit">
+        <div class="paint">            
                 <input class="input-paint" type="color" [(ngModel)]="newPixel.hexColor" clear-icon>
-                <button class="button-paint" type appEmoji="button" value="paint" (click)="paint()"> </button>
-            </p>
+                <button class="button-paint" type appEmoji="button" value="paint" (click)="paint()"> </button>            
         </div>
     </div>
+    <div *ngIf="pixelHasBeenSelected && !userCanEdit">
+        <span class="warning">We appreciate your enthusiasm. Please come back tomorrow to contribute again</span>
+    </div> 
 </div>

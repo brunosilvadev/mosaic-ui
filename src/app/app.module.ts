@@ -8,6 +8,7 @@ import { CanvasComponent } from './components/canvas/canvas.component';
 import { IntroComponent } from './components/intro/intro.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EmojiDirective } from './directives/emoji.directive';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { EmojiDirective } from './directives/emoji.directive';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

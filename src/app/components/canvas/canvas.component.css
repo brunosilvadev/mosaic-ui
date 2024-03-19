@@ -1,42 +1,58 @@
-.internal{
-    margin-top:30px;
-    margin-bottom:30px;
+.internal {
+    margin-top: 30px;
+    margin-bottom: 30px;
     width: 640px;
     height: 480px;
-    margin-left:auto;
-    margin-right:auto;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #f0f0f0;
-    box-shadow:0.2px 0.1px 0.3px hsl(0deg 0% 0% / 0.04),
-    1.9px 1.4px 3.2px -0.1px hsl(0deg 0% 0% / 0.07),
-    3.5px 2.6px 6px -0.2px hsl(0deg 0% 0% / 0.09),
-    5.2px 4px 9px -0.4px hsl(0deg 0% 0% / 0.11),
-    7.6px 5.8px 13.1px -0.5px hsl(0deg 0% 0% / 0.13),
-    10.9px 8.3px 18.8px -0.6px hsl(0deg 0% 0% / 0.15),
-    15.6px 11.9px 26.9px -0.7px hsl(0deg 0% 0% / 0.17),
-    22.1px 16.7px 38px -0.8px hsl(0deg 0% 0% / 0.2);
+    box-shadow: 0.2px 0.1px 0.3px hsl(0deg 0% 0% / 0.04),
+        1.9px 1.4px 3.2px -0.1px hsl(0deg 0% 0% / 0.07),
+        3.5px 2.6px 6px -0.2px hsl(0deg 0% 0% / 0.09),
+        5.2px 4px 9px -0.4px hsl(0deg 0% 0% / 0.11),
+        7.6px 5.8px 13.1px -0.5px hsl(0deg 0% 0% / 0.13),
+        10.9px 8.3px 18.8px -0.6px hsl(0deg 0% 0% / 0.15),
+        15.6px 11.9px 26.9px -0.7px hsl(0deg 0% 0% / 0.17),
+        22.1px 16.7px 38px -0.8px hsl(0deg 0% 0% / 0.2);
 }
 
-.external{
+.external {
     text-align: center;
 }
-.title
-{
+
+.title {
     font-family: 'Courier New', Courier, monospace;
 }
-.pixel
-{
-    float:left;
+
+.pixel {
+    float: left;
     width: 40px;
     height: 30px;
 }
-.element
-{
+
+.element {
     height: 100%;
 }
-.button-paint{
-    padding:  5px;
+
+.paint {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+.button-paint {
+    padding: 5px;
     width: 60px;
 }
+
 .input-paint {
-    padding:  5px;
+    line-height: normal;
+    height: 36px;
+    width: 60px;
+}
+.warning {
+    font-family: 'Courier New', Courier, monospace;
+    color:#999
+    
 }
