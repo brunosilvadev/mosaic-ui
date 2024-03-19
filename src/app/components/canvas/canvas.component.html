@@ -5,7 +5,7 @@
             <div *ngFor="let r of perspective.rows">
                 <div class="pixel" *ngFor="let p of r">
                     <div class="element"
-                        [ngStyle]="{'background-color': '#' + p.hexColor}"
+                        [ngStyle]="{'background-color': p.hexColor}"
                         (click)="selectPixel(p)">&nbsp;</div>
                 </div>
                 <br />
@@ -16,7 +16,7 @@
     <div *ngIf="pixelHasBeenSelected">
         <div class="paint">
             <p>
-                &#35; <input class="input-paint" type="" [(ngModel)]="newPixel.hexColor" clear-icon>
+                <input class="input-paint" type="color" [(ngModel)]="newPixel.hexColor" clear-icon>
                 <button class="button-paint" type appEmoji="button" value="paint" (click)="paint()"> </button>
             </p>
         </div>
