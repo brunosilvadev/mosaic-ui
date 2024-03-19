@@ -25,7 +25,6 @@ export class CanvasComponent implements OnInit {
 
   newPixel: Pixel = { x: 0, y: 0, hexColor: "" };
 
-  newPixelX: number = 0;
   async paint() {
     this.pixelHasBeenSelected = false;
     await this.service.PaintPixel(this.newPixel);
@@ -44,14 +43,12 @@ export class CanvasComponent implements OnInit {
 
   checkCookie(): void {
     this.userCanEdit = !this.cookieService.check('userEdited');
-    console.log('read' + this.userCanEdit);
   }
 
   writeCookie(): void {
     const expire = new Date();
     expire.setDate(expire.getDate() + 1);
     this.cookieService.set('userEdited','true',expire);
-    console.log('write' + this.userCanEdit);
   }
   
 
